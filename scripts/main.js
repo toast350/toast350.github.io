@@ -8,3 +8,27 @@ myImage.onclick = () => {
     myImage.setAttribute("src", "images/staring-cat.png");
   }
 };
+
+let myButton = document.querySelector("button");
+let myHeading = document.querySelector("h1");
+
+function setUserName() {
+  const myName = prompt("Please enter your name. (or something else, I don't care)");
+  if (!myName) {
+    setUserName()
+  } else {
+  localStorage.setItem("name", myName);
+  myHeading.textContent = `I have no idea what I am doing, ${myName}`;
+  }
+};
+
+if (!localStorage.getItem("name")) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem("name");
+  myHeading.textContent = `I have no idea what I am doing, ${storedName}`;
+};
+
+myButton.onclick = () => {
+  setUserName();
+};
