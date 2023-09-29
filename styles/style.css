@@ -27,3 +27,7 @@ p, li {
 img {
     border-radius: 8px;
 }
+
+pre {
+    font-size: x-small;
+}
